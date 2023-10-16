@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Farmer's Dashboard</title>
+  <title>Agrisense360| Dashboard</title>
 
   <!-- Montserrat Font -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
@@ -12,9 +12,11 @@
 
   <!-- Material Icons -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="styles/dashboard.css">
+  <link rel="icon" href="images/favicon.ico" type="icon">
 </head>
 
 <body>
@@ -23,7 +25,7 @@
     <!-- Header -->
     <header class="header">
       <div class="header-left">
-        <span class="material-icons-outlined">menu</span>
+        <span class="material-icons-outlined" id="menuButton">menu</span>
         <span class="welcome-message">Welcome Back, Farmer!</span>
       </div>
       <div class="header-right">
@@ -40,8 +42,7 @@
         <div class="sidebar-brand">
           <span class="material-icons-outlined">inventory</span> Farmer's Dashboard
         </div>
-        <button class="menu-icon" onclick="openSidebar()">
-          <span class="material-icons-outlined">menu</span>
+        <button class="menu-icon material-icons-outlined"  id="menuButton">menu
         </button>
 
       </div>
@@ -77,6 +78,12 @@
             <span class="material-icons-outlined">headset_mic</span> Support
           </a>
         </li>
+        <li class="sidebar-list-item">
+          <a href="#">
+            <span class="material-icons-outlined">logout</span> Logout
+          </a>
+        </li>
+        
       </ul>
     </aside>
     <!-- End Sidebar -->
@@ -126,11 +133,25 @@
           </div>
         </div>
       </section>
-
-
-      <!-- End Main -->
+      <div class="container">
+        <footer>
+          <div class="footer-social-icons">
+              <div class="icon"><i class="uil uil-instagram"></i></div>
+              <div class="icon"><i class="uil uil-linkedin-alt"></i></div>
+              <div class="icon"><i class="uil uil-dribbble"></i></div>
+              <div class="icon"><i class="uil uil-github-alt"></i></div>
+          </div>
+          <div class="bottom-footer">
+              <p>&copy; 2023 Agrisense360. All rights reserved.</p>
+          </div>
+      </footer>
+      </div>
+    
+    </main>  <!-- End Main -->
 
   </div>
+
+  
 
   <!-- Scripts -->
   <!-- ApexCharts -->
