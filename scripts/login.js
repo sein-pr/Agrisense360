@@ -1,44 +1,35 @@
+const sign_in_btn = document.querySelector("#sign-in-btn");
+const sign_up_btn = document.querySelector("#sign-up-btn");
+const container = document.querySelector(".container");
+const loginBtn = document.getElementById("login-btn");
 
-
-document.addEventListener("DOMContentLoaded", function () {
-    const container = document.getElementById('container');
-const registerBtn = document.getElementById('register-panel');
-const loginBtn = document.getElementById('login-panel');
-
-registerBtn.addEventListener('click', () => {
-    container.classList.add("active");
-});
-
-loginBtn.addEventListener('click', () => {
-    container.classList.remove("active");
-});
-
-function redirectToDashboard() {
-    window.location.href = "dashboard.html";
-}
-function redirectToHome() {
-    // Replace "index.html" with the actual URL of your login page
-    window.location.href = "index.html";
-}
-
-// Predefined login credentials
-const predefinedEmail = "seinprince2@gmail.com";
+// Define the predefined username and password
+const predefinedUsername = "seinprince2@gmail.com";
 const predefinedPassword = "14781";
 
-// Event listener for the login button
-document.getElementById("login-btn").addEventListener("click", function () {
-    const enteredEmail = document.getElementById("email").value;
-    const enteredPassword = document.getElementById("password").value;
+// Function to handle login
+function handleLogin() {
+  const usernameInput = document.getElementById("username").value;
+  const passwordInput = document.getElementById("password").value;
 
-    if (enteredEmail === predefinedEmail && enteredPassword === predefinedPassword) {
-        document.getElementById("loginStatus").textContent = "Login successful. Redirecting...";
-        // You can redirect the user to another page after successful login.
-        // Replace the URL with the actual URL you want to redirect to.
-        window.location.href = "dashboard.html";
-    } else {
-        document.getElementById("loginStatus").textContent = "Login failed. Please check your email and password.";
-    }
+  // Check if the entered details match the predefined values
+  if (usernameInput === predefinedUsername && passwordInput === predefinedPassword) {
+    // Login successful, you can redirect the user to another page or show a success message
+    window.location.href = "dashboard.html";
+    alert("Login successful!");
+  } else {
+    // Login failed, display an error message
+    alert("Invalid username or password. Please try again.");
+  }
+}
+
+sign_up_btn.addEventListener("click", () => {
+  container.classList.add("sign-up-mode");
 });
 
+sign_in_btn.addEventListener("click", () => {
+  container.classList.remove("sign-up-mode");
 });
 
+// Add a click event listener to the login button
+loginBtn.addEventListener("click", handleLogin);
