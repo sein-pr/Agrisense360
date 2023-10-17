@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
   });
 
-  var logoutLink = document.querySelector(".sidebar-list-item a[href='#']");
+  var logoutLink = document.querySelector(".sidebar-list-item a[href='logout']");
     logoutLink.addEventListener("click", function (event) {
         event.preventDefault(); // Prevent the link from navigating to "#" (or update the href)
         window.location.href = "login.html";
