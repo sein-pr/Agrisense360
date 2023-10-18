@@ -65,8 +65,8 @@
     <button class="sidebar-list-item">
       <span class="material-icons-outlined">headset_mic</span> Support
     </button>
-    <button class="sidebar-list-item">
-      <span class="material-icons-outlined">logout</span> Logout
+    <button class="sidebar-list-item" id="logout-btn">
+      <span class="material-icons-outlined" >logout</span> Logout
     </button>
   </div>
 </aside>
@@ -103,6 +103,9 @@
             <div class="field-overall-status">
               <h3>Field Status</h3>
               <label style="margin: 10px;">Field status here</label>
+              <div class="progress-bar">
+                <div class="progress" id="progress-bar"></div>
+              </div>
             </div>
             <div class="field-soil-status">
               <h3>Soil Health</h3>
@@ -115,8 +118,7 @@
           </div>
           <div class="field-content">
             <h3 style="text-align: center;">Field Recommandations</h3>
-            <label style="margin: 10px;">Personalized consulting services to farmers based on the data and insights
-              gathered from their fields.</label>
+            <label style="margin: 10px;"></label>
           </div>
         </div>
       </section>
