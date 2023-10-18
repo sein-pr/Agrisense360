@@ -40,8 +40,8 @@ const imageUrls = [
   "images/sensorview1.webp",
   "images/avatar2.jpg",
   "images/avatar3.jpg",
-  "images/avatar4.jpg",
-  "images/avatar5.jpg",
+  "images/avatar4.webp",
+  "images/avatar5.webp",
   "images/avatar6.jpg",
 ];
 
