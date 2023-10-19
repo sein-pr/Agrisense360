@@ -130,7 +130,7 @@ body {
   text-align: left;
   padding: 10px 20px; /* Adjust padding as needed */
   border: 2px solid #707070;
-  border-radius: 3px;
+  border-radius: 10px;
   background: none;
   color: #000000;
   text-decoration: none;
@@ -326,7 +326,7 @@ body {
   align-items: center;
   flex-direction: column;
   width: 30%;
-  height: 450px;
+  height: 550px;
   background: var(--color-white);
   border-radius: 20px;
   box-shadow: 1px 8px 10px 2px var(--first-shadow-color);
@@ -361,7 +361,7 @@ body {
   display: flex;
   flex-direction: column;
   width: 30%;
-  height: 450px;
+  height: 550px;
   background: var(--color-white);
   border-radius: 20px;
   box-shadow: 1px 8px 10px 2px var(--first-shadow-color);
@@ -372,7 +372,7 @@ body {
 .field-overall-status {
   position: relative;
   width: 100%;
-  height: 450px;
+  height: 650px;
   background: var(--color-white);
   border-radius: 20px;
   box-shadow: 1px 8px 10px 2px var(--first-shadow-color);
@@ -382,7 +382,7 @@ body {
 .field-soil-status {
   position: relative;
   width: 100%;
-  height: 450px;
+  height: 890px;
   background: var(--color-white);
   border-radius: 20px;
   box-shadow: 1px 8px 10px 2px var(--first-shadow-color);
@@ -392,11 +392,12 @@ body {
 .field-disease-status {
   position: relative;
   width: 100%;
-  height: 450px;
+  height: 750px;
   background: var(--color-white);
   border-radius: 20px;
   box-shadow: 1px 8px 10px 2px var(--first-shadow-color);
   overflow: hidden;
+  scroll-behavior: auto;
 }
 
 .field-container h3 {

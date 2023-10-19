@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
+    
 
     // Dummy data for the progress bar
     const fieldData = {
@@ -37,7 +38,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 status: 'Good',
                 progress: 80
             },
-            fieldImage: 'images/field-images/tomato.jpg',
             cropImage: 'images/field-images/tomato.jpg',
             cropRows: [
                 'images/field-images/f1r1.jpg',
@@ -64,7 +64,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 status: 'Fair',
                 progress: 60
             },
-            fieldImage: 'images/field-images/maize.jpg',
             cropImage: 'images/field-images/maize.jpg',
             cropRows: [
                 'images/field-images/f2r1.jpg',
@@ -91,7 +90,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 status: 'Poor',
                 progress: 40
             },
-            fieldImage: 'images/field-images/carrot.jpg',
             cropImage: 'images/field-images/carrot.webp',
             cropRows: [
                 'images/field-images/f3r1.jpg',
@@ -118,7 +116,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 status: 'Excellent',
                 progress: 99
             },
-            fieldImage: 'images/field-images/cabbage.jpg',
             cropImage: 'images/field-images/cabbage.jpg',
             cropRows: [
                 'images/field-images/f4r1.jpg',
@@ -145,7 +142,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 status: 'Average',
                 progress: 50
             },
-            fieldImage: 'images/field-images/spinach.jpg',
             cropImage: 'images/field-images/spinach.jpg',
             cropRows: [
                 'images/field-images/f5r1.jpg',
@@ -195,28 +191,41 @@ document.addEventListener("DOMContentLoaded", function () {
             fieldStatus.querySelector('.progress').style.backgroundColor = 'red';
         }
 
-        fieldSoil.querySelector('label').textContent = `Soil pH is ${data.soilHealth.pH}, organic matter is ${data.soilHealth.organicMatter}, Nitrogen: ${data.soilHealth.nutrients.nitrogen}, Phosphorus: ${data.soilHealth.nutrients.phosphorus}, Potassium: ${data.soilHealth.nutrients.potassium}`;
+        const soilList = document.createElement('ul');
+        soilList.innerHTML = `<li>Soil pH: ${data.soilHealth.pH}</li>
+                          <li>Organic Matter: ${data.soilHealth.organicMatter}</li>
+                          <li>Nutrients:</li>
+                          <ul>
+                              <li>Nitrogen: ${data.soilHealth.nutrients.nitrogen}</li>
+                              <li>Phosphorus: ${data.soilHealth.nutrients.phosphorus}</li>
+                              <li>Potassium: ${data.soilHealth.nutrients.potassium}</li>
+                          </ul>`;
+        fieldSoil.querySelector('label').textContent = 'Soil Health:';
+        fieldSoil.querySelector('label').appendChild(soilList);
 
-        fieldPest.querySelector('label').textContent = `Pests: ${data.pestAndDiseaseAlerts.pests.join(', ')}, Diseases: ${data.pestAndDiseaseAlerts.diseases.join(', ')}`;
+        const pestList = document.createElement('ul');
+        pestList.innerHTML = `<li>Pests: ${data.pestAndDiseaseAlerts.pests.join(', ')}</li>
+                          <li>Diseases: ${data.pestAndDiseaseAlerts.diseases.join(', ')}</li>`;
+        fieldPest.querySelector('label').textContent = 'Pest and Disease Alerts:';
+        fieldPest.querySelector('label').appendChild(pestList);
 
         fieldRecommendations.textContent = data.recommendations;
     }
     function updateImages(field) {
         const data = fieldData[field];
-        document.getElementById('field-image').src = data.fieldImage;
         document.getElementById('crop-image').src = data.cropImage;
-      
+
         const rowButton = document.querySelector('.row-btn');
         let currentRow = 0;
-      
+
         rowButton.addEventListener('click', () => {
-          currentRow = (currentRow + 1) % data.cropRows.length;
-          document.getElementById('field-image').src = data.cropRows[currentRow];
-          // Update the button label with the current row number
-          rowButton.innerText = `Row ${currentRow + 1}`;
+            currentRow = (currentRow + 1) % data.cropRows.length;
+            document.getElementById('crop-image').src = data.cropRows[currentRow];
+            // Update the button label with the current row number
+            rowButton.innerText = `Row ${currentRow + 1}`;
         });
     }
-      
+
 
     populateFields(dropdown.value);
     updateImages(dropdown.value);
