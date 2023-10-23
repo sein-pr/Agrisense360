@@ -8,6 +8,7 @@ WORKDIR /usr/share/nginx/html
 COPY index.html .  
 COPY styles/ ./styles/  
 COPY scripts/ ./scripts/ 
+COPY images/ ./images/
 
 # If you have additional assets like images, you can copy them here too
 # COPY images/ ./images/  # Replace "images/" with your image directory
