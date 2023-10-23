@@ -6,6 +6,8 @@ WORKDIR /usr/share/nginx/html
 
 # Copy your website files to the container's working directory
 COPY index.html .  
+COPY login.html .
+COPY dashboard.html .
 COPY styles/ ./styles/  
 COPY scripts/ ./scripts/ 
 COPY images/ ./images/
