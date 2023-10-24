@@ -1,18 +1,25 @@
 
 document.addEventListener("DOMContentLoaded", function () {
   /* ----- NAVIGATION BAR FUNCTION ----- */
-function myMenuFunction(){
-  var menuBtn = document.getElementById("myNavMenu");
-
-  if(menuBtn.className === "nav-menu"){
-    menuBtn.className += " responsive";
-  } else {
-    menuBtn.className = "nav-menu";
+  function myMenuFunction() {
+    var menuBtn = document.getElementById("myNavMenu");
+    if (menuBtn.classList.contains("responsive")) {
+      menuBtn.classList.remove("responsive");
+    } else {
+      menuBtn.classList.add("responsive");
+    }
   }
-}
+
+  /* Add an event listener to the menu icon */
+  const menuIcon = document.querySelector('.nav-menu-btn i.uil-bars');
+  if (menuIcon) {
+    menuIcon.addEventListener('click', myMenuFunction);
+  }
 
 /* ----- ADD SHADOW ON NAVIGATION BAR WHILE SCROLLING ----- */
-window.onscroll = function() {headerShadow()};
+window.onscroll = function () {
+  headerShadow();
+};
 
 function headerShadow() {
   const navHeader =document.getElementById("header");
